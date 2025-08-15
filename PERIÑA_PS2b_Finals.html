@@ -1,0 +1,86 @@
+<!DOCTYPE html>     // Property of NAVP
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finals Grade Calculator</title>
+    <link rel="stylesheet" href="finals.css">
+    <script src="finalsGrade.js" defer></script>
+</head>
+
+<body>
+    <h1>Final Prelim Grade Calculator</h1>
+    <p>Use this tool to calculate your final prelim grade!</p>
+    <!-- Left Column: CS Components -->
+    <div class="container">
+        <div class="box-layout">
+            <form id="grade-form">
+                <h2>Class Standing (CS) Components</h2>
+
+                <div class="input-group">
+                    <label for="quiz-one">Quiz 1:</label>
+                    <input type="number" id="quiz-one" placeholder="Enter your grade (0-100):">
+                </div>
+
+                <div class="input-group">
+                    <label for="quiz-two">Quiz 2:</label>
+                    <input type="number" id="quiz-two" placeholder="Enter your grade (0-100):">
+                </div>
+
+                <div class="input-group">
+                    <label for="quiz-three">Quiz 3:</label>
+                    <input type="number" id="quiz-three" placeholder="Enter your grade (0-100):">
+                </div>
+
+                <div class="input-group">
+                    <label for="lab-one">Lab Activity 1:</label>
+                    <input type="number" id="lab-one" placeholder="Enter your grade (0-100):">
+                </div>
+
+                <div class="input-group">
+                    <label for="lab-two">Lab Activity 2:</label>
+                    <input type="number" id="lab-two" placeholder="Enter your grade (0-100):">
+                </div>
+
+                <div class="input-group">
+                    <label for="lab-three">Lab Activity 3:</label>
+                    <input type="number" id="lab-three" placeholder="Enter your grade (0-100):">
+                </div>
+
+                <div class="input-group">
+                    <label for="ass-one">Assignment 1:</label>
+                    <input type="number" id="ass-one" placeholder="Enter your grade (0-100):">
+                </div>
+
+                <div class="input-group">
+                    <label for="ass-two">Assignment 2:</label>
+                    <input type="number" id="ass-two" placeholder="Enter your grade (0-100):">
+                </div>
+            </form>
+        </div>
+
+        <!-- PE, MG, & FG-->
+        <div class="right-column" ;>
+            <div class="box-layout">
+                <h2>Exam Components</h2>
+                <div class="input-group">
+                    <label for="pg">Prelim Exam (PE) (%):</label>
+                    <input type="number" id="pg" placeholder="Enter your grade (0-100):">
+                </div>
+
+                <button id="calculate-button">Calculate Final Grade</button>
+            </div>
+
+            <div class="box-layout">
+                <h2>Results</h2>
+                <div id="result">
+                    <p><strong>Class Standing (CS):</strong> -</p>
+                    <p><strong>Preliminary Grade (PG):</strong> -</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

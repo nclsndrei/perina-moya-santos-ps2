@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Final Grade Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    label {
+        font-weight: bold;
+        width: 180px;
+    }
+    input {
+        width: 120px;
+        padding: 5px;
+        font-size: 1rem;
+        text-align: left;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    button {
+        display: block;
+        margin: 15px auto;
+        padding: 8px 15px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    #finalMessage {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: red;
+        margin-top: 30px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Final Grade Calculator</h1>
+
+<form id="finalForm">
+    <div class="form-group">
+        <label for="quiz1">Enter Quiz 1:</label>
+        <input type="number" id="quiz1" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="quiz2">Enter Quiz 2:</label>
+        <input type="number" id="quiz2" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="quiz3">Enter Quiz 3:</label>
+        <input type="number" id="quiz3" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="lab1">Enter Lab Activity 1:</label>
+        <input type="number" id="lab1" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="lab2">Enter Lab Activity 2:</label>
+        <input type="number" id="lab2" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="lab3">Enter Lab Activity 3:</label>
+        <input type="number" id="lab3" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="assign1">Enter Assignment 1:</label>
+        <input type="number" id="assign1" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="assign2">Enter Assignment 2:</label>
+        <input type="number" id="assign2" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="finalExam">Enter Final Exam:</label>
+        <input type="number" id="finalExam" min="0" max="100">
+    </div>
+    <div class="form-group">
+        <label for="midterm">Enter Midterm Grade:</label>
+        <input type="number" id="midterm" min="0" max="100">
+    </div>
+
+    <button type="button" onclick="computeFinal()">Compute Final</button>
+</form>
+
+<p id="finalMessage"></p>
+
+<script>
+
+function limitInput(id) {
+    const input = document.getElementById(id);
+    input.addEventListener('input', () => {
+        if (input.value > 100) input.value = 0;
+        if (input.value < 0) input.value = 0;
+    });
+}
+
+['quiz1','quiz2','quiz3','lab1','lab2','lab3','assign1','assign2','finalExam','midterm'].forEach(limitInput);
+
+function computeFinal() {
+    let quizAvg = (Number(document.getElementById('quiz1').value) +
+                   Number(document.getElementById('quiz2').value) +
+                   Number(document.getElementById('quiz3').value)) / 3;
+
+    let assignAvg = (Number(document.getElementById('assign1').value) +
+                     Number(document.getElementById('assign2').value)) / 2;
+
+    let labAvg = (Number(document.getElementById('lab1').value) +
+                  Number(document.getElementById('lab2').value) +
+                  Number(document.getElementById('lab3').value)) / 3;
+
+    let finalExam = Number(document.getElementById('finalExam').value);
+
+    let mgInput = Number(document.getElementById('midterm').value);
+
+    let cs = (0.6 * quizAvg) + (0.2 * assignAvg) + (0.2 * labAvg);
+
+    let tfg = (0.5 * cs) + (0.5 * finalExam);
+
+    let fg = ((1/3) * mgInput) + ((2/3) * tfg);
+
+    document.getElementById('finalMessage').innerText = `Your Final Grade is: ${fg.toFixed(2)}`;
+}
+</script>
+
+</body>
+</html>

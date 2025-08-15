@@ -1,0 +1,52 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    margin:10px 0 7px;
+    text-align: center;
+}
+
+.tab {
+    width: 800px;
+    margin: 0 auto;
+    border: 10px salmon;
+    padding: 14px;
+}
+
+input {
+    width: 120px;
+    padding: 6px 9px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.label {
+    font-weight: 500;
+}
+
+.big {
+    font-size: 40px;
+    font-weight: 750;
+    color: #c41616;
+
+}
+
+.btn {
+    padding: 4px 10px;
+}
+
+.warning {
+    color: #b91c1c;
+    font-weight: 700;
+}
+
+input[type=num]::-webkit-inner-spin-button,
+input[type=num]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
+input[type=num] { -moz-appearance:textfield; }

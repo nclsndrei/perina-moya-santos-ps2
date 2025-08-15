@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midterm Grade</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="tab">
+    <h2>Midterm Grade</h2>
+
+    <table>
+      <tr><td>Enter Quiz 1:</td><td><input type="num" id="quiz_1" inputmode="dec"></td></tr>
+      <tr><td>Enter Quiz 2:</td><td><input type="num" id="quiz_2" inputmode="dec"></td></tr>
+      <tr><td>Enter Quiz 3:</td><td><input type="num" id="quiz_3" inputmode="dec"></td></tr>
+
+      <tr><td>Enter Laboratory Activity 1:</td><td><input type="num" id="l1" inputmode="dec"></td></tr>
+      <tr><td>Enter Laboratory Activity 2:</td><td><input type="num" id="l2" inputmode="dec"></td></tr>
+      <tr><td>Enter Laboratory Activity 3:</td><td><input type="num" id="l3" inputmode="dec"></td></tr>
+
+      <tr><td>Enter Assignment 1:</td><td><input type="num" id="assignment_1" inputmode="dec"></td></tr>
+      <tr><td>Enter Assignment 2:</td><td><input type="num" id="assignment_2" inputmode="dec"></td></tr>
+
+      <tr><td>Enter Practical Exam (PE):</td><td><input type="num" id="practical_exam" inputmode="dec"></td></tr>
+
+      <tr>
+        <td class="label">Prelim Grade (PG) <span class="warning">*</span>:</td>
+        <td><input type="num" id="pg" inputmode="dec" placeholder="required"></td>
+      </tr>
+    </table>
+
+    <div class="center" style="margin-top:10px">
+      <div class="label">Your Midterm Grade is:</div>
+      <div id="mgOut" class="big">—</div>
+
+      <div id="message" class="warning" style="margin-top:6px;"></div>
+
+      <div style="margin-top:10px;">
+        <button class="btn" id="btnCompute">Compute</button>
+        <button class="btn" id="btnReset">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  
+    
+</body>
+</html>
